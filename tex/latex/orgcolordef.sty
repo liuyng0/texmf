@@ -1,0 +1,41 @@
+\ProvidesPackage{orgcolordef}
+\usepackage{xcolor}
+% color-theme-sanityinc-tomorrow-night
+\definecolorset{HTML}{lst-}{-1}%
+{foreground,CCCCCC;%
+  keyword,B5BD68;%
+  identify,81A2BE;%
+  comment,969896;%
+  string,B294BB;%
+  number,373B41;%
+  background,2D2D2D;%
+  rule,2D2D2D;%
+  fill,FFFFFF;%
+  rulesep,DE935F}
+% color-theme-sanityinc-tomorrow-day
+% ----- elisp script to upcase the color ------------
+% (while (re-search-forward "\\([0-9a-f]\\\{6\\\}\\)")
+%   (setq test (upcase (match-string-no-properties 1)))
+%   (replace-match test))
+% ----- not used color ------------------------------
+% (day . ((background . "#FFFFFF")
+% (current-line . "#EFEFEF")
+% (foreground . "#4D4D4C")
+% (red . "#C82829")
+% (yellow . "#EAB700")
+% (aqua . "#3E999F")
+% (purple . "#8959A8")))
+\definecolorset{HTML}{lst-}{-0}%
+{foreground,111111;%
+  keyword,718C00;%
+  identify,111100;%
+  comment,D6D6D6;%
+  string,F5871F;%
+  number,8E908C;%
+  background,FFFFFF;%
+  rule,4D4D4C;%
+  fill,EFEFEF;%
+  rulesep,8959A8}
+
+\definecolorset{rgb}{mint-}{-0}%
+{background,0.95,0.95,0.95}

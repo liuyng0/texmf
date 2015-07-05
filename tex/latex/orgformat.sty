@@ -1,0 +1,64 @@
+\ProvidesPackage{orgformat}
+\usepackage[CJKnumber=true,indentfirst=true,CJKmath=true, 
+AutoFakeBold=true, AutoFakeSlant=true]{xeCJK}
+\usepackage{fontspec}
+\usepackage{xltxtra}%,xunicode}
+% 如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
+% 如果有它，可能会引起引号的问题
+% \defaultfontfeatures{Mapping=tex-text} 
+
+% 中文字体
+\newCJKfontfamily[song]\song{SimSun}
+\newCJKfontfamily[fangsong]\fsong{Adobe Fangsong Std R}
+\newCJKfontfamily[kai]\kai{Adobe Kaiti Std}
+\newCJKfontfamily[hei]\hei{SimHei}
+\newCJKfontfamily[lisu]\li{LiSu}
+\newCJKfontfamily[youyuan]\yyuan{YouYuan}
+\newCJKfontfamily[hiragino]\hira[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
+
+% 设置默认英文字体
+\setmainfont{Times New Roman}
+\setmonofont{Inconsolata}
+\setsansfont{Consolas}
+\let\oldttfamily\ttfamily
+\def\ttfamily{\oldttfamily\fontencoding{EU1}\selectfont}
+
+% 设定默认中文字体
+\setCJKmainfont{FangSong}
+\setCJKsansfont{SimHei}
+\setCJKmonofont{FangSong}
+\setCJKmathfont{Adobe Kaiti Std}
+
+% 英文字体
+\newfontinstance\NRoman{Times New Roman}
+\newcommand{\nroman}[1]{{\NRoman #1}}
+\newfontinstance\Consolas{Consolas}
+\newcommand{\consolas}[1]{{\Consolas #1}}
+\newfontinstance\Monaco{Monaco}
+\newcommand{\monaco}[1]{{\Monaco #1}}
+
+% 设置中文字号
+\newcommand{\chuhao}{\fontsize{42pt}{\baselineskip}\selectfont}
+\newcommand{\xiaochu}{\fontsize{36pt}{\baselineskip}\selectfont}
+\newcommand{\yihao}{\fontsize{28pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoyi}{\fontsize{24pt}{\baselineskip}\selectfont}
+\newcommand{\erhao}{\fontsize{21pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoer}{\fontsize{18pt}{\baselineskip}\selectfont}
+\newcommand{\sanhao}{\fontsize{15.75pt}{\baselineskip}\selectfont}
+\newcommand{\xiaosan}{\fontsize{15pt}{\baselineskip}\selectfont}
+\newcommand{\sihao}{\fontsize{14pt}{1.5\baselineskip}\selectfont}
+\newcommand{\xiaosi}{\fontsize{12pt}{\baselineskip}\selectfont}
+\newcommand{\wuhao}{\fontsize{10.5pt}{\baselineskip}\selectfont}
+\newcommand{\xiaowu}{\fontsize{9pt}{\baselineskip}\selectfont}
+\newcommand{\liuhao}{\fontsize{7.875pt}{\baselineskip}\selectfont}
+\newcommand{\xiaoliu}{\fontsize{6.5pt}{\baselineskip}\selectfont}
+\newcommand{\qihao}{\fontsize{5.25pt}{\baselineskip}\selectfont}
+
+\parindent=0em
+
+% \usepackage{enumitem}
+% \setlist[description]{%
+%   % topsep=30pt,               % space before start / after end of list
+%   % itemsep=5pt,               % space between items
+%   % font={\ttfamily}, % set the label font
+% }
