@@ -1,13 +1,29 @@
 \ProvidesPackage{orgformat}
-\usepackage[CJKnumber=true,indentfirst=true,CJKmath=true, 
+\RequirePackage{ifplatform}
+\usepackage[CJKnumber=true,indentfirst=true,CJKmath=true,
 AutoFakeBold=true, AutoFakeSlant=true]{xeCJK}
 \usepackage{fontspec}
 \usepackage{xltxtra}%,xunicode}
 % 如果没有它，会有一些 tex 特殊字符无法正常使用，比如连字符。
 % 如果有它，可能会引起引号的问题
-% \defaultfontfeatures{Mapping=tex-text} 
+% \defaultfontfeatures{Mapping=tex-text}
 
 % 中文字体
+\ifmacosx
+\newCJKfontfamily[song]\song{Songti SC}
+\newCJKfontfamily[fangsong]\fsong{PingFang SC}
+\newCJKfontfamily[kai]\kai{Kaiti SC}
+\newCJKfontfamily[hei]\hei{Heiti SC}
+\newCJKfontfamily[lisu]\li{Libian SC}
+\newCJKfontfamily[youyuan]\yyuan{Yuanti SC}
+\newCJKfontfamily[hiragino]\hira[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
+% 设定默认中文字体
+\setCJKmainfont{Songti SC}
+\setCJKsansfont{Hiragino Sans GB W6}
+\setCJKmonofont{PingFang SC}
+\setCJKmathfont{Kaiti SC}
+\let\newfontinstance=\newfontfamily
+\else
 \newCJKfontfamily[song]\song{SimSun}
 \newCJKfontfamily[fangsong]\fsong{Adobe Fangsong Std R}
 \newCJKfontfamily[kai]\kai{Adobe Kaiti Std}
@@ -15,19 +31,13 @@ AutoFakeBold=true, AutoFakeSlant=true]{xeCJK}
 \newCJKfontfamily[lisu]\li{LiSu}
 \newCJKfontfamily[youyuan]\yyuan{YouYuan}
 \newCJKfontfamily[hiragino]\hira[BoldFont=Hiragino Sans GB W6]{Hiragino Sans GB W3}
-
+\fi
 % 设置默认英文字体
 \setmainfont{Times New Roman}
 \setmonofont{Inconsolata}
 \setsansfont{Consolas}
 \let\oldttfamily\ttfamily
 \def\ttfamily{\oldttfamily\fontencoding{EU1}\selectfont}
-
-% 设定默认中文字体
-\setCJKmainfont{FangSong}
-\setCJKsansfont{SimHei}
-\setCJKmonofont{FangSong}
-\setCJKmathfont{Adobe Kaiti Std}
 
 % 英文字体
 \newfontinstance\NRoman{Times New Roman}
