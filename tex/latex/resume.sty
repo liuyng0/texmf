@@ -46,7 +46,7 @@
 \pagestyle{empty} % Removes page numbering
 
 %% Set all text's left skip
-\leftskip=2.5em
+\leftskip=0em
 
 %% Config list
 \usepackage{enumitem}
@@ -69,21 +69,22 @@
             {0em} %sep
             {} %before
             [\titlerule] %after
-\titlespacing{\section}{0pt}{10pt}{0pt}
+\titlespacing{\section}{0pt}{5pt}{10pt}
 
 \titleformat{\subsection} %command
             {\large} %format
             {} %prefix number label
             {0em} %sep
             {} %before
-\titlespacing{\subsection}{0pt}{10pt}{0pt}
+            [\titlerule] %after
+\titlespacing{\subsection}{0pt}{10pt}{10pt}
 
 \titleformat{\subsubsection} %command
             {} %format
             {} %prefix number label
             {0em} %sep
             {} %before
-\titlespacing{\subsubsection}{0pt}{10pt}{0pt}
+\titlespacing{\subsubsection}{0pt}{5pt}{0pt}
 
 %% \titleformat{\subsection} %command
 %%             [leftmargin] %shape
